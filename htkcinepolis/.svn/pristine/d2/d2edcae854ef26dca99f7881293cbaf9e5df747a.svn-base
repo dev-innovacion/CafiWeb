@@ -1,0 +1,56 @@
+﻿@using MongoDB.Bson
+@model JArray
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+@{
+    Layout = null;
+    JArray semaphores = new JArray();
+    Dictionary<string, string> typemovements = new Dictionary<string, string>();
+    typemovements.Add("create", "Alta");
+    typemovements.Add("delete", "Baja");
+    typemovements.Add("movement", "Transferencia");
+    typemovements.Add("temporal", "Salida Temporal");
+    
+    if (Model != null)
+    {
+        semaphores = Model;
+    }
+}
+<table class="table table-striped table-bordered table-hover datatable">
+    <thead>
+        <tr>
+            <th>Color</th>
+           
+            <th>Tipo de Movimiento</th>
+            <th>Dias</th>
+            <th>Fecha de Creación</th>
+            <th>Funciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (JObject semaphore in semaphores)
+        {
+            <tr data-id="@semaphore["_id"]">
+                <td style="border-left: 20px solid @semaphore["color"];">@semaphore["color"]</td>
+                
+                <td>@typemovements[semaphore["typeMovement"].ToString()]</td>
+                <td>@semaphore["days"]</td>
+                <td>@semaphore["CreatedDate"]</td>
+
+
+                <td>
+                    <div class="btn-group">
+
+                        <a   class="edit btn"  href="#"><i class="icon-edit"></i></a>
+
+
+                        <a  class="delete btn"  href="#"  ><i class="icon-trash"></i></a>
+
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

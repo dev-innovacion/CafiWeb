@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<div class="row-fluid">
+    <div class="span12">
+        <div class="row-fluid">
+            <div class="staticField">
+                Archivo Sdf a actualizar:
+            </div>
+            <div class="staticField">
+                <div class="btn red btn-file">
+                    <span class="fileupload-new">Seleccionar Archivo</span>
+                    <input type="file" id="fileCC" name="fileCC" value="Default" />
+                </div>
+            </div>
+            <div class="staticField">
+                <div class="span8">
+                    <div class="span3">
+                        Seleccione una tabla:
+                    </div>
+                    <div class="span5">
+                        <select id="selecttabla"></select>
+                    </div>
+                    <div>
+                        <button class="btn  red" id="btnexport">Exportar a Excel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            
+            <div class="span12">
+                <div class="span8">
+                    <div class="staticField">
+                        Escriba las sentencias aquí:
+                    </div>
+
+                    <div class="staticField">
+                        <textarea></textarea>
+                    </div>
+                </div>
+                <div class="span4">
+                    <button class="btn  red" id="btnsaveQuery">Guardar Scripts</button>
+                    <br />
+                    <button class="btn  purple" id="btnopenQuery">Cargar Scripts</button>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <button class="btn  blue" id="btnExecute">Ejecutar Scripts</button>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row-fluid">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,161 @@
+﻿@using MongoDB.Bson
+
+@using Newtonsoft.Json;
+@using Newtonsoft.Json.Linq;
+@model JObject
+@{
+    string username = "";
+    string subject = "";
+    string message = "";
+    string attach = "";
+    string url = "";
+    username = Model["userName"].ToString();
+    subject = Model["subject"].ToString();
+    message = Model["bodymessage"].ToString();
+    try
+    {
+        url = Model["url"].ToString();
+    }
+    catch (Exception ex)
+    {
+        
+    }
+    List<string> attachlist = new List<string>();
+    foreach (string item in Model["attachments"])
+    {
+
+        attachlist.Add(item.ToString());
+    }
+    attach = Model["attachments"].ToString();
+
+}
+<div id="ViewImage" style="background-color:black;" class="modal hide fade" data-backdrop="static">
+    <div class="modal-header">
+        <h3 class="modal-header-text"><span style="color:white;font-size:medium;">@username</span></h3>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove" style="margin-top: 10px; margin-right: 10px;color:white;"></i></button>
+    </div>
+    <div class="modal-body">
+    </div>
+
+</div>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="well grey">
+            <div class="well-header widgetclient titleclient">
+                <h5 style="left:50%;">Mensaje</h5>
+            </div>
+            <div class="well-content no_padding">
+                <div class="message_center span12">
+                    <div class="tab-list">
+
+                        <ul>
+                            <li class="active"><a href="/Message/Message/outboxTable"><i class="icon-inbox"></i>Bandeja de Entrada</a></li>
+                             </ul>
+                    </div>
+                    <div class="message_list">
+                        <div class="tab-content">
+                            <div class="tab-pane no_padding active" id="inbox">
+                                
+                                <div id="mail" style="margin: 20px 20px 20px 20px; ">
+                                    <h3>De: @username </h3>
+
+
+
+
+                                    <hr size="3" style="background-color:gray;" />
+
+
+                                    <div class="">
+                                        <h3>Asunto: </h3>
+                                        <div class="">
+                                            <h4 id="subject" class="typehead span8">@subject</h4>
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                    <div class="">
+
+                                        <div class="row-fluid">
+
+                                            <div class="span11" style="border:#000 solid 1px; padding:10px;">
+                                                <div>
+                                                    @message
+                                                </div>
+                                                <br />
+                                                <div>
+                                                    @foreach (string item in attachlist)
+                                                    {
+                                                        string ext = "";
+                                                        if (attach != "none")
+                                                        {
+                                                            ext = item.Split('.').Last(); //getting the extension
+                                                        }
+                                                        if (ext.ToLower() == "jpg" || ext.ToLower() == "png" || ext.ToLower() == "gif" || ext.ToLower() == "ico")
+                                                        {
+
+
+                                                            <div class="imageview span2" data-idimage="@item" id="@item">
+                                                                <!-- <a href="/Uploads/Images/Mail/@item">-->
+                                                                <img src="/Uploads/Images/Mail/@item" style="height:150px;width:150px;" />
+                                                                <!--</a>-->
+                                                            </div>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <div id="@item" class="span2">
+                                                                <a href="/Uploads/Images/Mail/@item">
+                                                                    <img src="http://images.all-free-download.com/images/graphiclarge/document_blank_100462.jpg" title="@item" style="height:150px;width:150px;" />
+                                                                </a>
+                                                            </div>
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    @if (url != "") { 
+                                    <div class="">
+
+                                        <div class="row-fluid">
+                                            <div class="span3">
+                                                <a href="@url" id="getdemand" class="btn button_green btn-block" style="color:white;" target="_blank">Ver Solicitud <i class="icon-play" style="color:white"></i></a>
+                                            </div>
+                                         </div>
+                                    </div>}
+                                        </div>
+                                    </div>
+                                </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+
+    jQuery(".imageview").click(function () {
+        var name = jQuery(this).data("idimage");
+
+        var img = jQuery("<img  style='width: 550px; height: 500px;'>", { class: "" }).attr('src', '/Uploads/Images/Mail/' + name);
+        var div = jQuery("<div>", { class: "" }).attr('data-id', name).append(img);
+
+
+        jQuery("#ViewImage").find(".modal-body").html("");
+        jQuery("#ViewImage").find(".modal-body").html(div);
+        jQuery("#ViewImage").modal("show");
+
+
+
+
+
+    });
+
+</script>
+

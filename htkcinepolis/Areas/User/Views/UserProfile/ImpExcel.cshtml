@@ -1,0 +1,384 @@
+﻿@{Layout = null;}
+
+
+@model List<List<string>>
+@{
+    ViewBag.Title = "Table Excel";
+    int count = 0;
+    int index = 0;
+    List<string> listheads = new List<string>();
+    int idselect = 0;
+   string cad="";
+   int selectvalue = 0;
+   var file = ViewData["Filerequest"];
+   string filename= Request.Files["file"].FileName;
+   filename = filename.Split('.')[0];
+   int nameheadx = 0;
+  
+   
+   
+}
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="icon-remove" style="margin-top: 10px; margin-right: 10px"></i></button>
+
+    <h3 class="modal-header-text">@filename</h3>
+</div>
+<div class="modal-body" id="ExcelContent" style="padding-top: 0px;">
+    <div class="row-fluid">
+        <div class="span5">
+
+            @foreach (var item in Model)
+            {
+
+                foreach (var td in item)
+                {
+                    if (td == "")
+                    {
+                        listheads.Add("Undefined"+nameheadx);
+                        nameheadx++;
+                    }
+                    else
+                    {
+                        listheads.Add(td);
+                    }
+
+                }
+              
+
+
+                break;
+               
+            }
+            <h2>  Campos del Perfil  :</h2>
+            <br />
+            <div style="overflow:auto;max-height:540px; margin-top: -30px;">
+                <!-- Campo del Usuario -->
+                <div class="row-fluid">
+                    <div class="span5"> <label style="font-size:16px;padding:5% 0% 0% 0%;float:right;">Descripción :</label></div>
+                    <div class="span7">
+                        <select id="name1" class="chosen" data-required="1" data-name="name">
+                            @foreach (string opt in listheads)
+                            {
+                                if (index == 0)
+                                {
+                                    <option value="no">Elige una opcion</option>
+                                    index++;
+                                }
+                                <option value="@selectvalue">@opt</option>
+                                selectvalue++;
+                            } 
+                            @{index = 0; selectvalue = 0;}
+                        </select>
+                    </div>
+               </div>
+              
+              
+                <!-- Campo de permisos -->
+                <div class="row-fluid">
+                    <div class="span5"> <label style="font-size:16px;padding:5% 0% 0% 0%;float:right;">Permisos :</label></div>
+                    <div class="span7">
+                        <select id="permissionsHTK1" class="chosen" data-required="0" data-name="permissionsHTK">
+                            @foreach (string opt in listheads)
+                            {
+                                if (index == 0)
+                                {
+                                    <option value="no">Elige una opcion</option>
+                                    index++;
+                                }
+                                <option value="@selectvalue">@opt</option>
+                                selectvalue++;
+                            }
+                            @{index = 0; selectvalue = 0;}
+                        </select>
+                    </div>
+                </div>
+              
+                <br />
+               
+            </div>
+        </div>
+
+        <div class="span7 ">
+            <h2>  Datos A Importar :</h2>
+            <div style="overflow:auto;max-height:480px;">
+                <table id="exceldatatable" class="table table-striped table-hover ">
+
+
+                    @foreach (var item in Model)
+                    {
+                        nameheadx = 0;
+                        <thead>
+                            <tr>
+                                <th class="table-icon hidden-480 gray" data-head="checkall"><input type="checkbox" name="selectall" class="uniform" checked></th>
+                                @foreach (var td in item)
+                                {
+                                    string value = td;
+                                    if (td == "")
+                                    {
+                                        value = "Undefined"+nameheadx;
+                                        nameheadx++;
+                                    }
+                                    <th class="hidden-480 gray" style="color:white;" data-head="@value">@value</th>
+                                }
+                               
+                            </tr>
+                        </thead>
+                                count++;
+                                break;
+
+                    }
+
+                    <tbody>
+                      
+
+                        @foreach (var item in Model)
+                        {
+
+                           
+                            if (count > 1)
+                            {
+                                <tr>
+                                    <td class="table-icon hidden-480">
+                                        <input type="checkbox" name="selectdate" class="uniform" checked>
+                                    </td>
+                                    @foreach (var td in item)
+                                    {
+                                        
+                                        <td class="hidden-480" data-td="@td">@td</td>
+
+                                    }
+                                </tr>
+
+                            }
+                            count++;
+
+                        }
+                    </tbody>
+
+
+
+                </table>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="modal-footer">
+    <input value="Guardar" class="btn blue" type="submit" id="saveImport">
+    <input value="Cancelar" class="btn grey" type="button" id="delete_cancel_buttonx">
+</div>
+
+
+<script src="~/Content/Scripts/lz-string-1.3.3.js"></script>
+    <script type="text/javascript">
+        var repeat = 0;
+        //jQuery(document).ready(function (jQuery) {
+            var idcateg = "";
+            //(new HtmlString("idcateg = '" + idcategory + "';"))
+            var array = new Array();
+            var validateselect = new Array();
+            var arrayhead = new Array();
+            var numhead = new Array();
+
+            jQuery('#exceldatatable tr').eq(0).each(function () {
+                var i = 0;
+                var j = 0;
+                jQuery(this).find('th').each(function () {
+
+                    if (i > 0) {
+                        arrayhead.push(jQuery(this).html());
+                        numhead.push(j);
+                        j++;
+                    }
+                    i++;
+                });
+            });
+
+            jQuery("input[name=selectall]").change(function () {
+                jQuery('input[type=checkbox]').each(function () {
+                    if (jQuery("input[name=selectall]:checked").length == 1) {
+                        this.checked = true;
+                    } else {
+                        this.checked = false;
+                    }
+                });
+            });
+            jQuery("#saveImport").off('click')
+            jQuery("#saveImport").on('click', function () {
+                var jsondataobj = new Array();
+                var relation = new Array();
+                var fd = new FormData();
+                if (jQuery('#name1').val() == "no") { _alert("error", "Elija una Opcion para el Campo: Descripcion"); return false; }
+                if (jQuery('#permissionsHTK').val() == "no") { _alert("error", "Elija una Opcion para el Campo: Permisos"); return false; }
+                if (jQuery('#name1').val() != "no") {
+                    for (var i = 0; i < validateselect.length; i++) {
+                        var valuex = jQuery('#' + validateselect[i] + '').val();
+                        var nameselectx = jQuery('#' + validateselect[i] + '').data('name');
+                        var reqselect = jQuery('#' + validateselect[i] + '').data('required');
+
+                        if (valuex == "no" && reqselect == 1) {
+                            _alert("Elija una Opcion para el Campo : " + nameselectx);
+                            return false;
+                        }
+                    }
+
+                    for (var i = 0; i < array.length; i++) {
+                        var order = { "namecol": null, "numcol": null };
+                        for (var j = 0; j < arrayhead.length; j++) {
+                            if (array[i].value == numhead[j]) {
+                                order.namecol = array[i].selectname;
+                                order.numcol = j;
+                                relation.push(order);
+                            }
+                        }
+                    }
+
+                    jQuery('#exceldatatable tr').each(function () {
+
+                        var i = 0;
+                        var enter = 0;
+                        var profileFieldsarray = new Array();
+                        var objectprofile = {};
+                        var objects = { "name": null,"permissionsHTK":null};
+                        var check = 0;
+                        if (jQuery(this).find('input[name="selectdate"]').is(':checked')) {
+                            check++;
+
+                        }
+
+                        if (check != 0) {
+                            var w = 0;
+                            jQuery(this).find('td').each(function () {
+                                if (w > 0) {
+                                    for (var z = 0; z < relation.length; z++) {
+                                        if (relation[z].numcol == i) {
+                                            if (relation[z].namecol == "name") {
+                                                objects.name = jQuery(this).html();
+                                            }else if (relation[z].namecol == "permissionsHTK") {
+                                                
+                                                objects.permissionsHTK = jQuery(this).html();
+                                            }
+                                        }
+                                    }
+                                    i++;
+                                    enter++;
+                                }
+                                w++;
+                            });
+
+                            if (enter > 0) {
+                                //objects.profileFields = objectprofile;
+                                //objects.parentCategory = idcateg;
+                                //objects.ext = "";
+                                jsondataobj.push(objects);
+                            }
+                        }
+                        
+                    });
+
+                    var jsondata1 = JSON.stringify(jsondataobj);
+                    fd.append("data", jsondata1);
+
+                   /* for (xy = 0; xy < jQuery("#uploadFiles")[0].files.length; xy++) {
+                        fd.append(jQuery("#uploadFiles")[0].files[xy].name, jQuery("#uploadFiles")[0].files[xy]);
+                        ext = jQuery("#uploadFiles")[0].files[xy].name;
+                        ext = ext.split('.').pop(-1);
+                        //check ".ext"
+                        if (ext != "rar" && ext != "zip") {
+                            _alert("error", "Formato de archivo invalido!");
+                            return false;
+                        }
+                        //check only one compresss
+                        if (ext == "rar" || ext == "zip") cant++;
+                        if (cant > 1) {
+                            _alert("error", 'No se permiten más de un archivo! (".rar" o ".zip")');
+                            cant = 0;
+                            return false;
+                        }
+                    }*/
+
+                   jQuery.ajax({
+                       url: "/User/UserProfile/saveImport",
+                       data: fd,
+                       type: "POST",
+                       contentType: false,
+                       processData: false,
+                        beforeSend: _loading(),
+                        success: function (data) {
+                            jQuery('#excelTable').find(".modal-body").html("");
+                            jQuery('#excelTable').modal("hide");
+                            if (data == null || data == "null") {
+                                _alert("error", "Problemas Al importar datos, Verifique el Archivo Fuente");
+                                _loading();
+                                return null;
+                            } else {
+                                data = JSON.parse(data);
+                                jQuery("#resultImport_panel").modal("show");
+                                jQuery("#perfilSuccess").html(data["perfilSuccess"]);
+                                jQuery("#perfilError").html(data["perfilError"]);
+                                jQuery("#perfilAlready").html(data["perfilAlready"]);
+                                //jQuery("#imgError").html(data["imgError"]);
+                                //jQuery("#locationError").html(data["locationError"]);
+                                _alert("success", "Datos Importados Correctamente");
+                              //  jQuery("#boss").html(data["newUsers"]);
+                                model.init();
+                                table.bindAll();
+                                _loading();
+                               
+                                return null;
+                            }
+                        },
+                        error: function (errorThrown) {
+                            alert("Ocurrio un error, intenta más tarde.");
+
+                            _loading();
+
+                        }
+                    });
+                } else { alert("Elija Relacion para todos los Campos."); }
+
+            });
+
+            jQuery("#delete_cancel_buttonx").on("click", function () {
+                jQuery("#excelTable").modal("hide");
+            });
+
+            jQuery('#name1,#permissionsHTK1').on('change', function () {
+                var objetdata = { "selectname": null, "option": null, "value": null };
+                var value = jQuery(this).val();
+                var nameselect = jQuery(this).data('name');
+                var htmlselect = jQuery('option:selected', this).html();
+
+                for (var i = 0; i < array.length; i++) {
+                    if (array[i].selectname == nameselect) {
+                        array.splice(i, 1);
+                    }
+                }
+
+                objetdata.selectname = nameselect;
+                objetdata.option = htmlselect;
+                objetdata.value = value;
+
+                if (value != "no") {
+                    var exist = 0;
+                    for (var i = 0; i < array.length; i++) {
+                        if (array[i].value == value) {
+                            jQuery(this).val('no');
+                            _alert("error","Esta opcion ya ha sido seleccionada")
+                            exist++;
+                        }
+                    }
+                    if (exist == 0) { array.push(objetdata); }
+                }
+            });
+
+           
+        // });
+
+       
+
+        //--------------------------------------------------
+
+
+    </script>

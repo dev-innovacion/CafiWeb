@@ -1,0 +1,61 @@
+C:\Users\homedepot\Documents\Visual Studio 2012\Projects\autobuildHTK-client\autobuildHTK-client\bin\autobuildHTK-client.dll
+C:\Users\homedepot\Documents\Visual Studio 2012\Projects\autobuildHTK-client\autobuildHTK-client\bin\autobuildHTK-client.pdb
+C:\Users\homedepot\Documents\Visual Studio 2012\Projects\autobuildHTK-client\autobuildHTK-client\obj\Debug\autobuildHTK-client.dll
+C:\Users\homedepot\Documents\Visual Studio 2012\Projects\autobuildHTK-client\autobuildHTK-client\obj\Debug\autobuildHTK-client.pdb
+C:\Users\homedepot\Documents\Visual Studio 2012\Projects\autobuildHTK-client\autobuildHTK-client\obj\Debug\autobuildHTK-client.csprojResolveAssemblyReference.cache
+C:\Users\RIVKA-Luis Angel\Desktop\HTK\autobuildHTK-client\bin\autobuildHTK-client.dll.config
+C:\Users\RIVKA-Luis Angel\Desktop\HTK\autobuildHTK-client\bin\autobuildHTK-client.dll
+C:\Users\RIVKA-Luis Angel\Desktop\HTK\autobuildHTK-client\bin\autobuildHTK-client.pdb
+C:\Users\RIVKA-Luis Angel\Desktop\HTK\autobuildHTK-client\bin\itextsharp.dll
+C:\Users\RIVKA-Luis Angel\Desktop\HTK\autobuildHTK-client\bin\RazorPDF.dll
+C:\Users\RIVKA-Luis Angel\Desktop\HTK\autobuildHTK-client\bin\RZLib.dll
+C:\Users\RIVKA-Luis Angel\Desktop\HTK\autobuildHTK-client\obj\Debug\autobuildHTK-client.dll
+C:\Users\RIVKA-Luis Angel\Desktop\HTK\autobuildHTK-client\obj\Debug\autobuildHTK-client.pdb
+C:\Users\RIVKA-Luis Angel\Desktop\HTK\autobuildHTK-client\obj\Debug\autobuildHTK-client.csprojResolveAssemblyReference.cache
+C:\Users\edwin2\Desktop\autobuildHTK-clientk\bin\autobuildHTK-client.dll.config
+C:\Users\edwin2\Desktop\autobuildHTK-clientk\bin\autobuildHTK-client.dll
+C:\Users\edwin2\Desktop\autobuildHTK-clientk\bin\autobuildHTK-client.pdb
+C:\Users\edwin2\Desktop\autobuildHTK-clientk\bin\itextsharp.dll
+C:\Users\edwin2\Desktop\autobuildHTK-clientk\bin\RazorPDF.dll
+C:\Users\edwin2\Desktop\autobuildHTK-clientk\bin\RZLib.dll
+C:\Users\edwin2\Desktop\autobuildHTK-clientk\obj\Debug\autobuildHTK-client.dll
+C:\Users\edwin2\Desktop\autobuildHTK-clientk\obj\Debug\autobuildHTK-client.pdb
+C:\Users\edwin2\Desktop\autobuildHTK-clientk\obj\Debug\autobuildHTK-client.csprojResolveAssemblyReference.cache
+C:\Users\Abiss\Documents\Visual Studio 2012\Projects\HTKproyects\Cinepolis\bin\autobuildHTK-client.dll
+C:\Users\Abiss\Documents\Visual Studio 2012\Projects\HTKproyects\Cinepolis\bin\autobuildHTK-client.pdb
+C:\Users\Abiss\Documents\Visual Studio 2012\Projects\HTKproyects\Cinepolis\bin\itextsharp.dll
+C:\Users\Abiss\Documents\Visual Studio 2012\Projects\HTKproyects\Cinepolis\bin\RazorPDF.dll
+C:\Users\Abiss\Documents\Visual Studio 2012\Projects\HTKproyects\Cinepolis\bin\RZLib.dll
+C:\Users\Abiss\Documents\Visual Studio 2012\Projects\HTKproyects\Cinepolis\obj\Debug\autobuildHTK-client.dll
+C:\Users\Abiss\Documents\Visual Studio 2012\Projects\HTKproyects\Cinepolis\obj\Debug\autobuildHTK-client.pdb
+C:\Users\Abiss\Documents\Visual Studio 2012\Projects\HTKproyects\Cinepolis\obj\Debug\autobuildHTK-client.csprojResolveAssemblyReference.cache
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\obj\Debug\autobuildHTK-client.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\autobuildHTK-client.dll.config
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\autobuildHTK-client.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\autobuildHTK-client.pdb
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\itextsharp.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\RazorPDF.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\RZLib.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\obj\Debug\autobuildHTK-client.pdb
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\Newtonsoft.Json.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Data.SqlServerCe.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Data.SqlServerCe.Entity.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Net.Http.Formatting.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.Helpers.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.Http.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.Http.WebHost.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.Razor.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.WebPages.Deployment.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.WebPages.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.WebPages.Razor.dll
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Net.Http.Formatting.xml
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.Helpers.xml
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.Http.xml
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.Http.WebHost.xml
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.Razor.xml
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.WebPages.xml
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.WebPages.Deployment.xml
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\bin\System.Web.WebPages.Razor.xml
+C:\Users\edwin2\Desktop\respaldofull2\htks\repocinetpolisnew\htkcinepolis\obj\Debug\autobuildHTK-client.csprojResolveAssemblyReference.cache
